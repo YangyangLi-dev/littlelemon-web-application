@@ -3,10 +3,11 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
 from . import views
 
-router = DefaultRouter(trailing_slash = False)
-router.register("users", views.UserViewSet, basename = "user")
-router.register("menu-items", views.MenuViewSet, basename = "menu-items")
-router.register("bookings", views.BookingViewSet, basename = "bookings")
+
+router = DefaultRouter(trailing_slash=False)
+router.register("users", views.UserViewSet, basename="user")
+router.register("menu-items", views.MenuViewSet, basename="menu-items")
+router.register("bookings", views.BookingViewSet, basename="bookings")
 
 urlpatterns = [
     path("",include(router.urls)),
